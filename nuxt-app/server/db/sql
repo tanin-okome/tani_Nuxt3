@@ -1,0 +1,8 @@
+CREATE TABLE `users` (
+  id INT(4) AUTO_INCREMENT NOT NULL PRIMARY KEY,
+  name VARCHAR(225) NOT NULL,
+  email VARCHAR(225) NOT NULL
+);
+
+INSERT INTO users (name, email)
+VALUES ("hachiware", "hachiware@gmail.com");

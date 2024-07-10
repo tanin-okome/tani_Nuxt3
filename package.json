@@ -1,0 +1,12 @@
+{
+  "dependencies": {
+    "@planetscale/database": "^1.18.0",
+    "drizzle-orm": "^0.31.4",
+    "jiti": "^1.21.6",
+    "mysql2": "^3.10.2",
+    "vue": "^3.4.31"
+  },
+  "devDependencies": {
+    "drizzle-kit": "^0.22.8"
+  }
+}
