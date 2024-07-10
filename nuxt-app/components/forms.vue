@@ -38,8 +38,9 @@ const handleAddUser =　async () => {
   isSubmitting.value = true;
   ShowMsg.value = false;
 
+  
   try {
-  const data:any = await $fetch('/api/users', {
+  const data:any = await $fetch('http://localhost:3001/api/userInsert', {
     method: 'POST',
     headers :{
     'Content-Type': 'application/json',

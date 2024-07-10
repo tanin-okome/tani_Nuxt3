@@ -2,8 +2,9 @@
      <!-- ユーザー一覧の入力フォーム -->    
       <h2>ユーザー一覧</h2>
      <div v-for="user in responseData" :key="user.name" class="userindex">
-      <div class="user_name"> {{ user.name }}</div>
-      <div> {{ user.email }}</div> 
+      <div class="user_name"> {{ user.name }} | {{ user.email }}</div>
+      <Button label="削除" icon="pi pi-check" />
+
     </div> 
   </template>
   
@@ -11,6 +12,8 @@
   // import UserList from "../data/userdata"
   import { ref, onMounted } from 'vue';
   import type { UserType } from './Usertype';
+  import Button from 'primevue/button';
+
 
   const responseData = ref<UserType[] | null > (null);
     onMounted(async () => {
@@ -34,6 +37,7 @@
 
 .userindex {
 display: flex;
+align-items: center
 }
 
 .user_name {
