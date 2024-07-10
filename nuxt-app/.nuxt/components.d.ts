@@ -2,7 +2,8 @@
 import type { DefineComponent, SlotsType } from 'vue'
 type IslandComponent<T extends DefineComponent> = T & DefineComponent<{}, {refresh: () => Promise<void>}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, SlotsType<{ fallback: { error: unknown } }>>
 interface _GlobalComponents {
-      'UserView': typeof import("../components/UserView.vue")['default']
+      'UserEditModal': typeof import("../components/UserEditModal.vue")['default']
+    'UserView': typeof import("../components/UserView.vue")['default']
     'Usertype': typeof import("../components/Usertype")['default']
     'Forms': typeof import("../components/forms.vue")['default']
     'Test': typeof import("../components/test.vue")['default']
@@ -29,7 +30,8 @@ interface _GlobalComponents {
     'Body': typeof import("../node_modules/nuxt/dist/head/runtime/components")['Body']
     'NuxtIsland': typeof import("../node_modules/nuxt/dist/app/components/nuxt-island")['default']
     'NuxtRouteAnnouncer': IslandComponent<typeof import("../node_modules/nuxt/dist/app/components/server-placeholder")['default']>
-      'LazyUserView': typeof import("../components/UserView.vue")['default']
+      'LazyUserEditModal': typeof import("../components/UserEditModal.vue")['default']
+    'LazyUserView': typeof import("../components/UserView.vue")['default']
     'LazyUsertype': typeof import("../components/Usertype")['default']
     'LazyForms': typeof import("../components/forms.vue")['default']
     'LazyTest': typeof import("../components/test.vue")['default']
@@ -70,6 +72,7 @@ declare module 'vue' {
   export interface GlobalComponents extends _GlobalComponents { }
 }
 
+export const UserEditModal: typeof import("../components/UserEditModal.vue")['default']
 export const UserView: typeof import("../components/UserView.vue")['default']
 export const Usertype: typeof import("../components/Usertype")['default']
 export const Forms: typeof import("../components/forms.vue")['default']
@@ -97,6 +100,7 @@ export const Html: typeof import("../node_modules/nuxt/dist/head/runtime/compone
 export const Body: typeof import("../node_modules/nuxt/dist/head/runtime/components")['Body']
 export const NuxtIsland: typeof import("../node_modules/nuxt/dist/app/components/nuxt-island")['default']
 export const NuxtRouteAnnouncer: IslandComponent<typeof import("../node_modules/nuxt/dist/app/components/server-placeholder")['default']>
+export const LazyUserEditModal: typeof import("../components/UserEditModal.vue")['default']
 export const LazyUserView: typeof import("../components/UserView.vue")['default']
 export const LazyUsertype: typeof import("../components/Usertype")['default']
 export const LazyForms: typeof import("../components/forms.vue")['default']

@@ -4,6 +4,7 @@ import { join } from 'node:path';
 import { mkdirSync } from 'node:fs';
 import { parentPort, threadId } from 'node:worker_threads';
 import { defineEventHandler, handleCacheHeaders, splitCookiesString, isEvent, createEvent, fetchWithEvent, getRequestHeader, eventHandler, setHeaders, sendRedirect, proxyRequest, createError, setResponseHeader, send, getResponseStatus, setResponseStatus, setResponseHeaders, getRequestHeaders, createApp, createRouter as createRouter$1, toNodeListener, lazyEventHandler, getRouterParam, getQuery as getQuery$1, readBody, getResponseStatusText } from 'file://C:/Users/tanio/Desktop/Nuxt/tani_Nuxt3/nuxt-app/node_modules/h3/dist/index.mjs';
+import { eq } from 'file://C:/Users/tanio/Desktop/Nuxt/tani_Nuxt3/nuxt-app/node_modules/drizzle-orm/index.js';
 import mysql, { createPool } from 'file://C:/Users/tanio/Desktop/Nuxt/tani_Nuxt3/nuxt-app/node_modules/mysql2/promise.js';
 import { drizzle } from 'file://C:/Users/tanio/Desktop/Nuxt/tani_Nuxt3/nuxt-app/node_modules/drizzle-orm/mysql2/index.js';
 import { mysqlTable, int, varchar } from 'file://C:/Users/tanio/Desktop/Nuxt/tani_Nuxt3/nuxt-app/node_modules/drizzle-orm/mysql-core/index.js';
@@ -6755,6 +6756,7 @@ const errorHandler = (async function errorhandler(error, event) {
 
 const _lazy_NQmsPu = () => Promise.resolve().then(function () { return test$1; });
 const _lazy_AM8m3X = () => Promise.resolve().then(function () { return userApi$1; });
+const _lazy_ZGSpui = () => Promise.resolve().then(function () { return userDelete$1; });
 const _lazy_PqjeMz = () => Promise.resolve().then(function () { return userInsert$1; });
 const _lazy_Mtj4YG = () => Promise.resolve().then(function () { return users$1; });
 const _lazy_wXCARG = () => Promise.resolve().then(function () { return renderer$1; });
@@ -6762,6 +6764,7 @@ const _lazy_wXCARG = () => Promise.resolve().then(function () { return renderer$
 const handlers = [
   { route: '/api/test', handler: _lazy_NQmsPu, lazy: true, middleware: false, method: undefined },
   { route: '/api/user-api', handler: _lazy_AM8m3X, lazy: true, middleware: false, method: undefined },
+  { route: '/api/userDelete', handler: _lazy_ZGSpui, lazy: true, middleware: false, method: undefined },
   { route: '/api/userInsert', handler: _lazy_PqjeMz, lazy: true, middleware: false, method: undefined },
   { route: '/api/users', handler: _lazy_Mtj4YG, lazy: true, middleware: false, method: undefined },
   { route: '/__nuxt_error', handler: _lazy_wXCARG, lazy: true, middleware: false, method: undefined },
@@ -7006,6 +7009,17 @@ const userApi = defineEventHandler(async (event) => {
 const userApi$1 = /*#__PURE__*/Object.freeze({
   __proto__: null,
   default: userApi
+});
+
+const userDelete = defineEventHandler(async (event) => {
+  const body = await readBody(event);
+  const deleteresult = await db.delete(users$2).where(eq(users$2.email, body.email));
+  return deleteresult;
+});
+
+const userDelete$1 = /*#__PURE__*/Object.freeze({
+  __proto__: null,
+  default: userDelete
 });
 
 const userInsert = defineEventHandler(async (event) => {

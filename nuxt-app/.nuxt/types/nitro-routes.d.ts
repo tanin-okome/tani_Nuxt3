@@ -9,6 +9,9 @@ declare module 'nitropack' {
     '/api/user-api': {
       'default': Simplify<Serialize<Awaited<ReturnType<typeof import('../../server/api/user-api').default>>>>
     }
+    '/api/userDelete': {
+      'default': Simplify<Serialize<Awaited<ReturnType<typeof import('../../server/api/userDelete').default>>>>
+    }
     '/api/userInsert': {
       'default': Simplify<Serialize<Awaited<ReturnType<typeof import('../../server/api/userInsert').default>>>>
     }
