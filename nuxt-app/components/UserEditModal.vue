@@ -22,7 +22,6 @@
 
 <script setup>
 import { ref, defineProps, defineEmits, watch } from 'vue';
-import type { UserType } from './Usertype';
 
 
 const visible = ref(false);

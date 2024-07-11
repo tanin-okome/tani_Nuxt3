@@ -20,6 +20,19 @@
 <script setup lang="ts">
 import { ref } from 'vue';
 import type { UserType }  from "./Usertype";  // 型をインポート
+import { z } from "zod";
+
+
+const FormData = z.object({
+  name:z.string().min(2).max(50), // 文字列、最小2文字、最大50文字
+  email:z.string().email(),
+  address:z.string().min(2).email(),
+
+
+}
+
+)
+
 
 const username = ref<string>(''); 
 const useremail = ref<string>('');
